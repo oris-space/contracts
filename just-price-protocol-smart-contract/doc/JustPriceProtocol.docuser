@@ -12,6 +12,9 @@
       "getStage(uint256)" : {
          "notice" : "Get current stage of Just Price Protocol.\r "
       },
+      "outstandingTokens(address)" : {
+         "notice" : "Get number of tokens bought by given investor during reserve stage that are\r not yet delivered to him.\r "
+      },
       "refund(address[])" : {
          "notice" : "Refund investors who bought tokens during \"reserve\" stage.\r "
       },

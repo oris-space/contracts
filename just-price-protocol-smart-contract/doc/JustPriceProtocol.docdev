@@ -17,6 +17,12 @@
          },
          "return" : "current stage of Just Price Protocol\r"
       },
+      "outstandingTokens(address)" : {
+         "params" : {
+            "_investor" : "address of investor to get number of outstanding tokens\r      for\r"
+         },
+         "return" : "number of non-delivered tokens given investor bought during reserve\r        stage\r"
+      },
       "refund(address[])" : {
          "params" : {
             "_investors" : "addresses of investors to refund\r"

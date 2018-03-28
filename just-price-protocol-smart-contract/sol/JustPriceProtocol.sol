@@ -171,7 +171,7 @@ contract JustPriceProtocol is SafeMath {
   /**
    * Delay after start of "growth" stage before fee may be changed.
    */
-  uint256 internal constant FEE_CHANGE_DELAY = 2 years;
+  uint256 internal constant FEE_CHANGE_DELAY = 730 days;
 
   /**
    * Minimum fee (1 / 20000 = 0.0005).
@@ -237,7 +237,7 @@ contract JustPriceProtocol is SafeMath {
 
     assert (reserveAmount < TWO_128);
     uint256 totalSupply = orgonToken.totalSupply ();
-    assert (totalSupply < TWO_128);
+    require (totalSupply < TWO_128);
 
     require (_value <= totalSupply);
 
@@ -362,19 +362,37 @@ contract JustPriceProtocol is SafeMath {
    * @param _fee new fee numerator.
    */
   function setFee (uint256 _fee) public {
+    require (msg.sender == k1);
+
     require (_fee >= MIN_FEE);
     require (_fee <= MAX_FEE);
 
     updateStage ();
 
-    require (stage == Stage.GROWTH && stage == Stage.LIFE);
+    require (stage == Stage.GROWTH || stage == Stage.LIFE);
     require (currentTime () >= feeChangeEnableTime);
+
+    require (safeSub (_fee, 1) <= fee);
+    require (safeAdd (_fee, 1) >= fee);
 
     if (fee != _fee) {
       fee = _fee;
 
       FeeChange (_fee);
     }
+  }
+
+  /**
+   * Get number of tokens bought by given investor during reserve stage that are
+   * not yet delivered to him.
+   *
+   * @param _investor address of investor to get number of outstanding tokens
+   *       for
+   * @return number of non-delivered tokens given investor bought during reserve
+   *         stage
+   */
+  function outstandingTokens (address _investor) public view returns (uint256) {
+    return investors [_investor].tokensBought;
   }
 
   /**
@@ -629,10 +647,10 @@ contract JustPriceProtocol is SafeMath {
         root_10 (safeAdd (TWO_128, (msg.value << 128) / reserveAmount)),
         TWO_128)) >> 128;
 
-    if (toBuy > 0) {
-      reserveAmount = safeAdd (reserveAmount, msg.value);
-      require (reserveAmount < TWO_128);
+    reserveAmount = safeAdd (reserveAmount, msg.value);
+    require (reserveAmount < TWO_128);
 
+    if (toBuy > 0) {
       require (orgonToken.createTokens (toBuy));
       require (orgonToken.totalSupply () < TWO_128);
 
