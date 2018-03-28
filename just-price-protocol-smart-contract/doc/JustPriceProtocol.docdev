@@ -1,0 +1,45 @@
+{
+   "methods" : {
+      "deliver(address[])" : {
+         "params" : {
+            "_investors" : "addresses of investors to deliver tokens to\r"
+         }
+      },
+      "eligibleVotes(address)" : {
+         "params" : {
+            "_investor" : "address of investor to get number of eligible votes of\r"
+         },
+         "return" : "Number of eligible votes given investor has\r"
+      },
+      "getStage(uint256)" : {
+         "params" : {
+            "_currentTime" : "current time in seconds since epoch\r"
+         },
+         "return" : "current stage of Just Price Protocol\r"
+      },
+      "refund(address[])" : {
+         "params" : {
+            "_investors" : "addresses of investors to refund\r"
+         }
+      },
+      "sellTokens(uint256)" : {
+         "params" : {
+            "_value" : "number of tokens to sell\r"
+         }
+      },
+      "setFee(uint256)" : {
+         "params" : {
+            "_fee" : "new fee numerator.\r"
+         }
+      },
+      "totalEligibleVotes()" : {
+         "return" : "total number of votes eligible for choosing new K1 address\r"
+      },
+      "votesFor(address)" : {
+         "params" : {
+            "_newK1" : "new K1 address to get number of votes for\r"
+         },
+         "return" : "number of votes for the given new K1 address\r"
+      }
+   }
+}

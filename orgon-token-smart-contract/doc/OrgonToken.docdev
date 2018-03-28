@@ -1,0 +1,68 @@
+{
+   "methods" : {
+      "allowance(address,address)" : {
+         "params" : {
+            "_owner" : "address to get number of tokens allowed to be transferred\r       from the owner of\r",
+            "_spender" : "address to get number of tokens allowed to be transferred\r       by the owner of\r"
+         },
+         "return" : "number of tokens given spender is currently allowed to transfer\r        from given owner\r"
+      },
+      "approve(address,uint256)" : {
+         "params" : {
+            "_spender" : "address to allow the owner of to transfer tokens from\r       message sender\r",
+            "_value" : "number of tokens to allow to transfer\r"
+         },
+         "return" : "true if token transfer was successfully approved, false otherwise\r"
+      },
+      "balanceOf(address)" : {
+         "params" : {
+            "_owner" : "address to get number of tokens currently belonging to the\r       owner of\r"
+         },
+         "return" : "number of tokens currently belonging to the owner of given address\r"
+      },
+      "burnTokens(uint256)" : {
+         "params" : {
+            "_value" : "number of tokens to burn\r"
+         },
+         "return" : "true on success, false on error\r"
+      },
+      "createTokens(uint256)" : {
+         "params" : {
+            "_value" : "number of tokens to create\r"
+         },
+         "return" : "true if tokens were created successfully, false otherwise\r"
+      },
+      "decimals()" : {
+         "return" : "number of decimals for this token\r"
+      },
+      "name()" : {
+         "return" : "name of this token\r"
+      },
+      "setOwner(address)" : {
+         "params" : {
+            "_newOwner" : "address of new owner of the smart contract\r"
+         }
+      },
+      "symbol()" : {
+         "return" : "symbol of this token\r"
+      },
+      "totalSupply()" : {
+         "return" : "total number of tokens in circulation\r"
+      },
+      "transfer(address,uint256)" : {
+         "params" : {
+            "_to" : "address to transfer tokens to the owner of\r",
+            "_value" : "number of tokens to transfer to the owner of given address\r"
+         },
+         "return" : "true if tokens were transferred successfully, false otherwise\r"
+      },
+      "transferFrom(address,address,uint256)" : {
+         "params" : {
+            "_from" : "address to transfer tokens from the owner of\r",
+            "_to" : "address to transfer tokens to the owner of\r",
+            "_value" : "number of tokens to transfer from given owner to given\r       recipient\r"
+         },
+         "return" : "true if tokens were transferred successfully, false otherwise\r"
+      }
+   }
+}

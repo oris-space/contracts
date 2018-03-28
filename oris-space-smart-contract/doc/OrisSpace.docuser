@@ -1,0 +1,13 @@
+{
+   "methods" : {
+      "sendOrgonTokens(address,uint256)" : {
+         "notice" : "Send certain amount of Orgon Tokens from Oris Space balance to the owner\r of given address.\r "
+      },
+      "setTransferLimit(uint256)" : {
+         "notice" : "Set maximum amount of tokens that could be sent from Oris Space to a single\r address.\r "
+      },
+      "start(uint256)" : {
+         "notice" : "Start Oris Space smart contract.\r "
+      }
+   }
+}

@@ -1,0 +1,31 @@
+{
+   "methods" : {
+      "buyTokens()" : {
+         "notice" : "Buy tokens.\r"
+      },
+      "deliver(address[])" : {
+         "notice" : "Deliver tokens sold during \"reserve\" stage to corresponding investors.\r "
+      },
+      "eligibleVotes(address)" : {
+         "notice" : "Return number of votes eligible for choosing new K1 address given investor\r has.\r "
+      },
+      "getStage(uint256)" : {
+         "notice" : "Get current stage of Just Price Protocol.\r "
+      },
+      "refund(address[])" : {
+         "notice" : "Refund investors who bought tokens during \"reserve\" stage.\r "
+      },
+      "sellTokens(uint256)" : {
+         "notice" : "Sell tokens.\r "
+      },
+      "setFee(uint256)" : {
+         "notice" : "Set new fee numerator.\r "
+      },
+      "totalEligibleVotes()" : {
+         "notice" : "Return total number of votes eligible for choosing new K1 address.\r "
+      },
+      "votesFor(address)" : {
+         "notice" : "Get number of votes for the given new K1 address.\r "
+      }
+   }
+}

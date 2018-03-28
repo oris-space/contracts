@@ -1,0 +1,20 @@
+{
+   "methods" : {
+      "sendOrgonTokens(address,uint256)" : {
+         "params" : {
+            "_to" : "address to send Orgon Tokens to\r",
+            "_value" : "amount of tokens to be sent\r"
+         }
+      },
+      "setTransferLimit(uint256)" : {
+         "params" : {
+            "_transferLimit" : "new transfer limit value\r"
+         }
+      },
+      "start(uint256)" : {
+         "params" : {
+            "_returnAmount" : "amount of tokens to return to message sender.\r"
+         }
+      }
+   }
+}
