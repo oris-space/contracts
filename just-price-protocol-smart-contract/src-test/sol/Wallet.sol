@@ -1,0 +1,50 @@
+/*
+ * Simple Wallet Contract to be used for testing.
+ * Copyright © 2016–2017 by ABDK Consulting.
+ * Author: Mikhail Vladimirov <mikhail.vladimirov@gmail.com>
+ */
+pragma solidity ^0.4.20;
+
+contract Wallet {
+  /**
+   * Whether wallet accepts incoming payments.
+   */
+  bool acceptsPayments = false;
+
+  /**
+   * Default function just accepts payments.
+   */
+  function () public payable {
+    require (acceptsPayments);
+  }
+
+  /**
+   * Set whether wallet accepts payments.
+   *
+   * @param _acceptsPayments true to accept payments, false to refuse payments.
+   */
+  function setAcceptsPayments (bool _acceptsPayments) public {
+    acceptsPayments = _acceptsPayments;
+  }
+
+  /**
+   * Execute transaction to given address with given data and value.
+   *
+   * @param _to address to execute transaction to
+   * @param _data transaction data
+   * @param _value transaction value
+   * @return true if transaction was executed successfully, false otherwise 
+   */
+  function execute (address _to, bytes _data, uint256 _value)
+  public payable returns (bool success) {
+    Result (success = _to.call.value (_value)(_data));
+    if (!success) msg.sender.transfer (msg.value);
+  }
+
+  /**
+   * Holds result of operation.
+   *
+   * @param value result of operation
+   */
+  event Result (bool value);
+}
