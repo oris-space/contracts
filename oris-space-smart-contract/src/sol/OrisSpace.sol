@@ -92,7 +92,7 @@ contract OrisSpace is SafeMath {
   /**
    * Maximum amount of Orgon Tokens that could be sent to single address.
    */
-  uint256 internal transferLimit = 100e9;
+  uint256 internal transferLimit = 100000e9;
 
   /**
    * Mapping from address to amount of Orgon Tokens transferred from Oris Space
