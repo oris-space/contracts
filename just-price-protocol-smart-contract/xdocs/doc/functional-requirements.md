@@ -30,17 +30,17 @@ Here is stages diagram:
             |                                    |
             | 72500 ETH collected                |
             V                                    |
-    +---------------+ 39013.174672 ETH collected |
+    +---------------+ 30000.000000 ETH collected |
     | BEFORE_GROWTH |<---------------------------O
     +---------------+                            |
-            |                                    | 39013.174672 ETH not collected
-            | 80% of tokens delivered            |
+            |                                    | 30000.000000 ETH not collected
+            | 75% of tokens delivered            |
             V                                    V
      +------------+                         +--------+
      |   GROWTH   |                         | REFUND |
      +------------+                         +--------+
             |
-            | 1,500,000,000 tokens issued or 365 days passed since start of "GROWTH" stage
+            | 1,000,000,000 tokens issued or 285 days passed since start of "GROWTH" stage
             V
         +------+
         | LIFE |
@@ -129,8 +129,8 @@ For every purchase, small fraction of purchased tokens is withheld by Just Price
 
 ##### Transitions:
 
-* To LIFE stage: when there are at least 1,500,000,000 tokens in circulation
-* To LIFE stage: when 365 days passed since the start of GROWTH stage
+* To LIFE stage: when there are at least 1,000,000,000 tokens in circulation
+* To LIFE stage: when 285 days passed since the start of GROWTH stage
 
 ### 2.5. LIFE Stage
 

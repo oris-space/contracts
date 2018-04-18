@@ -37,7 +37,7 @@ contract JustPriceProtocol is SafeMath {
   /**
    * Minimum amount to be collected during "reserve" stage.
    */
-  uint256 internal constant RESERVE_MIN_AMOUNT = 39013.174672 ether;
+  uint256 internal constant RESERVE_MIN_AMOUNT = 30000 ether;
 
   /**
    * Maximum number of tokens to be sold during "reserve" stage.
@@ -132,18 +132,18 @@ contract JustPriceProtocol is SafeMath {
   /**
    * "Growth" stage ends once this many tokens were issued.
    */
-  uint256 internal constant GROWTH_MAX_TOKENS = 1500000000e9;
+  uint256 internal constant GROWTH_MAX_TOKENS = 1000000000e9;
 
   /**
    * Maximum duration of "growth" stage.
    */
-  uint256 internal constant GROWTH_MAX_DURATION = 365 days;
+  uint256 internal constant GROWTH_MAX_DURATION = 285 days;
 
   /**
    * Numerator of fraction of tokens bought at "reserve" stage to be delivered
    * before "growth" stage start.
    */
-  uint256 internal constant GROWTH_MIN_DELIVERED_NUMERATOR = 80;
+  uint256 internal constant GROWTH_MIN_DELIVERED_NUMERATOR = 75;
 
   /**
    * Denominator of fraction of tokens bought at "reserve" stage to be delivered
@@ -171,7 +171,7 @@ contract JustPriceProtocol is SafeMath {
   /**
    * Delay after start of "growth" stage before fee may be changed.
    */
-  uint256 internal constant FEE_CHANGE_DELAY = 730 days;
+  uint256 internal constant FEE_CHANGE_DELAY = 650 days;
 
   /**
    * Minimum fee (1 / 20000 = 0.0005).
